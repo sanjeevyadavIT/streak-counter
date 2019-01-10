@@ -1,0 +1,30 @@
+<resources>
+
+
+    <!--=======================================================================================================-->
+    <!--================================= ConfigureTaskActivity.java=================================================-->
+    <!--=======================================================================================================-->
+    <!-- TextAppearance for Labels -->
+    <style name="HeadingTextAppearance" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Labels TextAppearance with AccentColor Tint-->
+    <style name="AccentHeadingTextAppearance" parent="HeadingTextAppearance">
+        <item name="android:textColor">?colorAccent</item>
+    </style>
+
+    <!-- Styling applied to EditText-->
+    <style name="AccentEditTextStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textAppearance">@style/AccentHeadingTextAppearance</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorAccentTransparent</item>
+    </style>
+
+    <!--=======================================================================================================-->
+    <!--================================= TaskDetailFragment.java==============================================-->
+    <!--=======================================================================================================-->
+
+</resources>

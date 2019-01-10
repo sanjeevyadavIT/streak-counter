@@ -1,0 +1,6 @@
+<resources>
+    <integer name="default_streak">0</integer>
+    <integer name="max_character_length_task_title">20</integer>
+    <integer name="max_character_length_task_location">20</integer>
+    <integer name="list_column_count">1</integer>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+    <!-- Mauve :  linear-gradient(to right, #42275a, #734b6d) -->
+    <!-- Royal : linear-gradient(to right, #141e30, #243b55);-->
+    <!-- Minimal red : linear-gradient(to right, #f00000, #dc281e);-->
+    <!-- Deep sea space linear-gradient(to right, #2c3e50, #4ca1af);-->
+    <!-- Solid valut : linear-gradient(to right, #3a7bd5, #3a6073);-->
+    <!-- Sylvia : linear-gradient(to right, #ff4b1f, #ff9068);-->
+    <!-- Colors of sky : linear-gradient(to right, #e0eafc, #cfdef3);-->
+    <!-- Decent : linear-gradient(to right, #4ca1af, #c4e0e5);-->
+    <!-- Dark skies :  linear-gradient(to right, #4b79a1, #283e51);-->
+    <!--Nighthawk :  linear-gradient(to right, #2980b9, #2c3e50);-->
+    <!-- Joomla : linear-gradient(to right, #1e3c72, #2a5298);-->
+    <!--Haikus : linear-gradient(to right, #fd746c, #ff9068);-->
+    <!--Pale wood : linear-gradient(to right, #eacda3, #d6ae7b);-->
+    <!-- Purplin linear-gradient(to right, #6a3093, #a044ff);-->
+    <!-- Inbox : linear-gradient(to right, #457fca, #5691c8);-->
+    <!-- Light orange :  linear-gradient(to right, #ffb75e, #ed8f03);-->
+    <!-- Little leaf : linear-gradient(to right, #76b852, #8dc26f);-->
+    <!-- Deep purple : linear-gradient(to right, #673ab7, #512da8);-->
+    <!-- Clear sky : linear-gradient(to right, #005c97, #363795);-->
+    <!-- Passion : linear-gradient(to right, #e53935, #e35d5b);-->
+    <!-- Piglet : linear-gradient(to right, #ee9ca7, #ffdde1);-->
+    <!-- koko carmel : linear-gradient(to right, #d1913c, #ffd194);-->
+    <!-- Portrait : linear-gradient(to right, #8e9eab, #eef2f3); -->
+    <!-- Facebook messenger : linear-gradient(to right, #00c6ff, #0072ff);-->
+    <!-- Teal love : linear-gradient(to right, #aaffa9, #11ffbd);-->
+    <!-- Ash :  linear-gradient(to right, #606c88, #3f4c6b);-->
+    <gradient
+        android:angle="180"
+        android:endColor="#232526"
+        android:startColor="#414345"
+        android:type="linear" />
+
+    <corners android:radius="10dp"/>
+</shape>

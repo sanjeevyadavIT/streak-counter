@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <!--
+        Remove this code if you want Full screen Activity
+        <style name="AppTheme.FullScreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>-->
+
+    <!--<style name="BottomSheetDialog.FullScreen" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>-->
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <!-- TextAppearance for Toolbar-->
+    <style name="toolbarTitleTextAppearance" parent="TextAppearance.MaterialComponents.Headline6"/>
+
+    <!-- Styling for AlertDialog-->
+    <style name="AlertDialogLight" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+    </style>
+
+    <!--=======================================================================================================-->
+    <!--================================= ConfigureTaskActivity.java=================================================-->
+    <!--=======================================================================================================-->
+    <!-- TextAppearance for Labels -->
+    <style name="HeadingTextAppearance" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Labels TextAppearance with AccentColor Tint-->
+    <style name="AccentHeadingTextAppearance" parent="HeadingTextAppearance">
+        <item name="android:textColor">?colorAccent</item>
+    </style>
+
+    <!-- Styling applied to EditText-->
+    <style name="AccentEditTextStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textAppearance">@style/AccentHeadingTextAppearance</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorAccentTransparent</item>
+    </style>
+
+    <!--=======================================================================================================-->
+    <!--================================= TaskDetailFragment.java==============================================-->
+    <!--=======================================================================================================-->
+
+</resources>

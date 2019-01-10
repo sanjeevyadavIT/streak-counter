@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/task_card_corner_radius"
+    app:elevation="0dp">
+
+    <ImageView
+        android:id="@+id/card_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/gradient_1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/card_view_padding" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/card_view_padding" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_view_padding"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:textColor="#fff"
+            android:textSize="@dimen/card_view_title_size"
+            app:layout_constraintEnd_toEndOf="@id/right_margin"
+            app:layout_constraintStart_toStartOf="@id/left_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I will learn spanish for 20 minutes at 6:00 am in duolingo app" />
+
+        <TextView
+            android:id="@+id/tv_streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintBottom_toBottomOf="@+id/image_streak_icon"
+            app:layout_constraintEnd_toStartOf="@+id/image_streak_icon"
+            app:layout_constraintTop_toTopOf="@+id/image_streak_icon"
+            tools:text="22" />
+
+        <ImageView
+            android:id="@+id/image_streak_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="@dimen/card_view_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_margin"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintVertical_bias="1.0"
+            tools:srcCompat="@drawable/ic_flame" />
+
+        <ImageButton
+            android:id="@+id/ib_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/semi_transparent_background"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_streak_icon"
+            app:layout_constraintStart_toStartOf="@+id/left_margin"
+            app:srcCompat="@drawable/ic_sound" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!---->
+</com.google.android.material.card.MaterialCardView>

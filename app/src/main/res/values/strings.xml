@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name" translatable="false">Streaky</string>
+    <string name="channel_name" translatable="false">@string/app_name</string>
+    <string name="channel_description">Task Reminder Notifications</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="no_data_available">Add new streak</string>
+    <string name="current_streak_text" translatable="false">%d</string>
+    <string name="task_string_format_with_time">I will %s for %s at %s in %s</string>
+    <string name="task_string_format_without_time">I will %s at %s in %s</string>
+    <string name="time_tag">Time</string>
+    <string name="default_task_title">TODO</string>
+    <string name="delete_task">Delete</string>
+    <string name="edit_task">Edit</string>
+    <string name="dialog_delete_title">Delete Task</string>
+    <string name="dialog_delete_message">All of your progress wil be lost forever.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="task_title_empty_error">Task title cannot be empty</string>
+    <string name="task_time_empty_error">Set time for task</string>
+    <string name="task_location_empty_error">location cannot be empty</string>
+    <string name="show_bottom_sheet">Show bottom sheet</string>
+    <string name="notification_title">Time for</string>
+    <string name="pause">Pause task</string>
+    <string name="dialog_quit_title">Are you sure you want to quit?</string>
+    <string name="dialog_quit_message">You haven\'t completed the task, your progress will be lost</string>
+    <string name="new_task_added_msg">Woo-hoo! New task added to Arsenal</string>
+    <string name="task_deleted_msg">Task successfully deleted! Thank you for your service</string>
+    <string name="feedback_tag">Feedback</string>
+    <string name="about_tag">About App</string>
+    <string name="share_app_tag">Share app with Friends</string>
+    <string name="share_message">Found this awesome app, to keep tack of my habit</string>
+    <string name="streak_tag">Streak</string>
+    <string name="about_app"><i>Streaky</i> was born from the idea of streak counting mechanism from Duolingo app. Maintaining streak motivated me to keep going. Create task and maintain streak. Track your habit and share the app with your friends.</string>
+    <string name="how_to_help">You can help us make this app better by sending any suggestion or feedback from the menu option in front screen. The app is open source on github and you can contribute there. <a href="https://github.com/alexakasanjeev/streak-counter">Github link</a></string>
+    <string name="task_not_completed">Not done</string>
+    <string name="task_completed">You\'re on fire today</string>
+    <plurals name="numberOfMinute">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="streakLost">
+        <item quantity="one">You lost streak in</item>
+        <item quantity="other">You lost streaks in</item>
+    </plurals>
+
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- This helps when app is out of multi-window mode-->
+    <dimen name="list_gutter">16dp</dimen>
+    <dimen name="card_view_padding">24dp</dimen>
+    <dimen name="card_view_title_size">24sp</dimen>
+</resources>

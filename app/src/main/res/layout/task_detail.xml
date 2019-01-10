@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="android.view.View"/>
+        <import type="com.betatech.alex.streakcounter.util.TaskStateAnnotation"/>
+
+        <variable
+            name="viewmodel"
+            type="com.betatech.alex.streakcounter.ui.detail_task.TaskDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{viewmodel.taskRunningStatus == TaskStateAnnotation.TASK_COMPLETED ? @color/colorAccent : @color/colorBackground}"
+        tools:context=".ui.detail_task.TaskDetailFragment">
+
+        <TextView
+            android:id="@+id/tv_task_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.task.title ?? @string/default_task_title}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textIsSelectable="true"
+            app:layout_constraintEnd_toEndOf="@id/group_header"
+            app:layout_constraintStart_toStartOf="@id/group_header"
+            app:layout_constraintTop_toTopOf="@id/group_header"
+            tools:text="Learn Spanish" />
+
+        <TextView
+            android:id="@+id/tv_task_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{viewmodel.taskRunningStatus == TaskStateAnnotation.TASK_COMPLETED ? @string/task_completed : @string/task_not_completed}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_task_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_task_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_task_title" />
+
+        <com.gelitenight.waveview.library.WaveView
+            android:id="@+id/wave"
+            android:layout_width="@dimen/wave_view_size"
+            android:layout_height="@dimen/wave_view_size"
+            android:visibility="@{viewmodel.taskRunningStatus == TaskStateAnnotation.TASK_COMPLETED ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="@id/group_action"
+            app:layout_constraintStart_toStartOf="@id/group_action"
+            app:layout_constraintTop_toTopOf="@id/group_action"
+            app:layout_constraintBottom_toBottomOf="@id/group_action"/>
+
+        <ImageView
+            android:id="@+id/iv_white_circle"
+            android:layout_width="@dimen/wave_view_size"
+            android:layout_height="@dimen/wave_view_size"
+            android:visibility="@{viewmodel.taskRunningStatus == TaskStateAnnotation.TASK_COMPLETED ? View.VISIBLE : View.GONE}"
+            android:src="@{viewmodel.taskRunningStatus == TaskStateAnnotation.TASK_COMPLETED ? @drawable/round_button_white : @drawable/round_button_transparent}"
+            app:layout_constraintEnd_toEndOf="@id/group_action"
+            app:layout_constraintStart_toStartOf="@id/group_action"
+            app:layout_constraintTop_toTopOf="@id/group_action"
+            app:layout_constraintBottom_toBottomOf="@id/group_action"/>
+
+        <ImageButton
+            android:id="@+id/iBtn_action"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:onClick="@{viewmodel::changeTaskStatusButtonClicked}"
+            android:src="@{viewmodel.taskRunningStatus == TaskStateAnnotation.TASK_COMPLETED ? @drawable/ic_done_green : (viewmodel.taskRunningStatus  == TaskStateAnnotation.TASK_PAUSED || viewmodel.taskRunningStatus  == TaskStateAnnotation.TASK_STOPPED)? @drawable/ic_play : @drawable/ic_pause }"
+            android:clickable="@{viewmodel.taskRunningStatus == TaskStateAnnotation.TASK_COMPLETED ? false  : true}"
+            app:layout_constraintBottom_toBottomOf="@+id/wave"
+            app:layout_constraintEnd_toEndOf="@+id/wave"
+            app:layout_constraintStart_toStartOf="@+id/wave"
+            app:layout_constraintTop_toTopOf="@+id/wave"
+            tools:src="@drawable/ic_play"/>
+
+        <TextView
+            android:id="@+id/tv_streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/streak_tag"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            app:layout_constraintTop_toTopOf="@id/group_footer"
+            app:layout_constraintStart_toStartOf="@id/group_footer"
+            app:layout_constraintEnd_toEndOf="@id/group_footer"/>
+
+        <TextView
+            android:id="@+id/tv_current_streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{@string/current_streak_text(viewmodel.task!=null ? viewmodel.task.currentStreak : @integer/default_streak)}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            app:layout_constraintEnd_toEndOf="@+id/tv_streak"
+            app:layout_constraintHorizontal_bias="0.303"
+            app:layout_constraintStart_toStartOf="@+id/tv_streak"
+            app:layout_constraintTop_toBottomOf="@+id/tv_streak"
+            tools:text="1" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_header"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:minHeight="70dp"
+            app:constraint_referenced_ids="tv_task_status,tv_task_title,iv_white_circle"
+            app:layout_constraintBottom_toTopOf="@+id/group_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_action"
+            android:layout_width="@dimen/wave_view_size"
+            android:layout_height="@dimen/wave_view_size"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:constraint_referenced_ids="wave,iBtn_action"
+            app:layout_constraintBottom_toTopOf="@+id/group_footer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/group_header" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            app:constraint_referenced_ids="tv_current_streak,tv_streak"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/group_action" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
