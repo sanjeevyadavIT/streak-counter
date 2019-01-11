@@ -36,21 +36,26 @@ public final class DateUtils {
      * Returns current date with hour,minutes,seconds all set to zero
      */
     public static Date getCurrentDateWithoutTime(){
-        String df= DateFormat.getDateInstance().format(System.currentTimeMillis());
-        DateFormat format = new SimpleDateFormat("d MMM yyyy", Locale.ENGLISH); //MMM can cause problem, if df is in other format
-        try {
-            return format.parse(df);
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return new Date(); //For now sending blank date
-        }
+        final Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.HOUR_OF_DAY,0);
+        cal.set(Calendar.MINUTE,0);
+        cal.set(Calendar.SECOND,0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTime();
     }
 
     /**
      * Returns yesterday date, with hour,minutes,seconds all set to zero
      */
     public static Date getYesterdayDateWithoutTime(){
-        final long oneDay = 1000*60*60*24; // Number of milli seconds in 1 day
+        final Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        cal.set(Calendar.HOUR_OF_DAY,0);
+        cal.set(Calendar.MINUTE,0);
+        cal.set(Calendar.SECOND,0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTime();
+        /*final long oneDay = 86_400_000; // Number of milli seconds in 1 day
         String df= DateFormat.getDateInstance().format(System.currentTimeMillis() - oneDay );
         DateFormat format = new SimpleDateFormat("d MMM yyyy", Locale.ENGLISH);
         try {
@@ -58,7 +63,7 @@ public final class DateUtils {
         } catch (ParseException e) {
             e.printStackTrace();
             return new Date(); //For now sending blank date
-        }
+        }*/
     }
 
     /**
