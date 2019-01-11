@@ -18,9 +18,7 @@
     <string name="task_title_empty_error">Task title cannot be empty</string>
     <string name="task_time_empty_error">Set time for task</string>
     <string name="task_location_empty_error">location cannot be empty</string>
-    <string name="show_bottom_sheet">Show bottom sheet</string>
     <string name="notification_title">Time for</string>
-    <string name="pause">Pause task</string>
     <string name="dialog_quit_title">Are you sure you want to quit?</string>
     <string name="dialog_quit_message">You haven\'t completed the task, your progress will be lost</string>
     <string name="new_task_added_msg">Woo-hoo! New task added to Arsenal</string>
