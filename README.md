@@ -68,5 +68,5 @@ If you have any questions or want to make friends with me, please feel free to c
 
 ## License
 
-This project is licensed under the GNU v3 Public License License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU v3 Public License License - see the [LICENSE.MD](LICENSE.MD) file for details
 
